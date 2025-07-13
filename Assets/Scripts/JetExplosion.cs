@@ -23,7 +23,7 @@ public class JetExplosion : MonoBehaviour
         isExplode = true;
 
         // camea shake handle
-        camera.GetComponent<CameraShake>().enabled = true;
+
         camera.GetComponent<CameraShake>().ShakeCamera(shakeDuration, shakeStrength);
 
         // explosion VFX handle

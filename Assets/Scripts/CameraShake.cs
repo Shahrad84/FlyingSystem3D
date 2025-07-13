@@ -8,8 +8,9 @@ public class CameraShake : MonoBehaviour
     float shakeStrength;
     float currentShakeStrength;
 
-    private void Awake()
+    private void Start()
     {
+        leftTime = 0;
         originalPosition = transform.localPosition;
     }
 
@@ -17,10 +18,8 @@ public class CameraShake : MonoBehaviour
     {
         if (leftTime > 0)
         {
-            // Calculate shake intensity (damps over time)
             currentShakeStrength = shakeStrength * (leftTime / shakeDuration);
 
-            // Different seeds for X and Y create more natural movement
             float x = (Mathf.PerlinNoise(Time.time * 10f, 0) * 2 - 1) * currentShakeStrength;
             float y = (Mathf.PerlinNoise(0, Time.time * 10f) * 2 - 1) * currentShakeStrength;
 
@@ -33,11 +32,11 @@ public class CameraShake : MonoBehaviour
         }
     }
 
-    // Public method to trigger shake
     public void ShakeCamera(float duration, float strength)
     {
         shakeDuration = duration;
         shakeStrength = strength;
         leftTime = shakeDuration;
+        originalPosition = transform.localPosition;
     }
 }
