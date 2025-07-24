@@ -39,7 +39,7 @@ public class AirPlaneController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = transform.forward * forwardSpeed;
+        //rb.linearVelocity = transform.forward * forwardSpeed;
 
         rb.AddTorque(transform.right * -inputPitch * pitchCoefficient, ForceMode.Acceleration);
         rb.AddTorque(transform.up * inputYaw * yawCoefficient, ForceMode.Acceleration);

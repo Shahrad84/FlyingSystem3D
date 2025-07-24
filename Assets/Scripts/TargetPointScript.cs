@@ -32,7 +32,7 @@ public class TargetPointScript : MonoBehaviour
         newRocket.SetActive(true);
         newRocket.gameObject.GetComponent<RocketScript>().startShooting(shootEndPosition);
 
-        camera.GetComponent<CameraShake>().ShakeCamera(0.1f, 0.05f);
+        camera.GetComponent<CameraShake>().StartShakeCamera(0.1f, 0.05f);
 
     }
 

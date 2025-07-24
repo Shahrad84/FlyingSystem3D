@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class JetExplosion : MonoBehaviour
@@ -18,13 +19,13 @@ public class JetExplosion : MonoBehaviour
         Explode();
     }
 
-    void Explode()
+    public void Explode()
     {
         isExplode = true;
 
         // camea shake handle
 
-        camera.GetComponent<CameraShake>().ShakeCamera(shakeDuration, shakeStrength);
+        camera.GetComponent<CameraShake>().StartShakeCamera(shakeDuration, shakeStrength);
 
         // explosion VFX handle
         ExplosionVFX.SetActive(true);

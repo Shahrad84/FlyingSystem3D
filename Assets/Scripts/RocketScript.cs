@@ -60,11 +60,11 @@ public class RocketScript : MonoBehaviour
         float distaceBetween_cameraAndExposion = (camera.transform.position - transform.position).magnitude;
         if (isTargetDown)
         {
-            camera.GetComponent<CameraShake>().ShakeCamera(rocketExplosionDuration, 220 / distaceBetween_cameraAndExposion);
+            camera.GetComponent<CameraShake>().StartShakeCamera(rocketExplosionDuration, 220 / distaceBetween_cameraAndExposion);
         }
         else
         {
-            camera.GetComponent<CameraShake>().ShakeCamera(rocketExplosionDuration * 0.7f, (220 / distaceBetween_cameraAndExposion) * 0.65f);
+            camera.GetComponent<CameraShake>().StartShakeCamera(rocketExplosionDuration * 0.7f, (220 / distaceBetween_cameraAndExposion) * 0.65f);
             explosionVFX.transform.localScale *= 0.2f;
         }
 
